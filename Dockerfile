@@ -1,8 +1,12 @@
-FROM docker.io/manimcommunity/manim:v0.18.1
+FROM manimcommunity/manim:v0.18.1
+
+USER root
+RUN pip install notebook
+
+ARG NB_USER=manimuser
+USER ${NB_USER}
 
 COPY --chown=manimuser:manimuser . /manim
-
-RUN python3 -m pip install --no-cache-dir notebook jupyterlab
 #RUN pip install --no-cache-dir jupyterhub
 
 #USER root
