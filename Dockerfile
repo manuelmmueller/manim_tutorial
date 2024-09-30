@@ -6,7 +6,7 @@ RUN python3 -m pip install --no-cache-dir notebook jupyterlab
 
 USER root
 ARG NB_USER=jovyan
-ARG NB_UID=1000
+ARG NB_UID=1234
 ENV USER ${NB_USER}
 ENV NB_UID ${NB_UID}
 ENV HOME /home/${NB_USER}
